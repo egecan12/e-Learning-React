@@ -88,10 +88,12 @@ function App() {
             >
               Search
             </button>
+
           </form>
         </div>
       </nav>
       <LoginButton/>
+
       <LessonCards />
     </div>
   );

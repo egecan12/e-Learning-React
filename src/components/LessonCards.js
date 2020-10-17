@@ -7,7 +7,8 @@ export default class LessonCards extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      items: [],
+      photos: []
     };
   }
 
@@ -19,6 +20,28 @@ export default class LessonCards extends React.Component {
           this.setState({
             isLoaded: true,
             items: result
+          });
+        },
+        // Not: Burada hataları yakalamak önemlidir.
+        // Bileşenimizde bug bulunmaması için, 'catch ()' bloğu yerine bulunan
+        // bu blok içinde hatalar yakalanır.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+      //second fectch
+
+      fetch("http://palamana.com/teletags/course/read.php")
+      // `http://localhost:5000/profile/${this.props.match.params.username}`,      
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            photos: result
           });
         },
         // Not: Burada hataları yakalamak önemlidir.
@@ -60,7 +83,8 @@ export default class LessonCards extends React.Component {
                   <div class="card" style={{ width: "18rem" }}>
           <img
             style={{ width: "18rem", height: "200px" }}
-            src="https://images.unsplash.com/photo-1602354949094-d4a7286c8f6b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+            src={`http://www.palamana.com/teletags/uploads/courses/${item.id}.png`}
+            // `http://localhost:5000/profile/${this.props.match.params.username}`
             class="card-img-top"
             alt="..."
           />

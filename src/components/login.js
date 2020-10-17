@@ -2,14 +2,14 @@ import React, { Component } from "react";
 export default class login extends Component {
   render() {
     return (
-      <div style={{ float: "right" }}>
+      <div style={{ float: "left", marginLeft:"5%" }}>
         <button
           type="button"
           className="btn btn-primary"
           data-toggle="modal"
           data-target="#exampleModal"
         >
-          Login or Register
+          Sign-In
         </button>
 
         <div
