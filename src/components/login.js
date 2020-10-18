@@ -15,7 +15,7 @@ export default class login extends Component {
         <div
           className="modal fade"
           id="exampleModal"
-          tabindex="-1"
+          tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
@@ -38,7 +38,7 @@ export default class login extends Component {
               <div className="modal-body">
                 <form>
                   <div className="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
+                    <label htmlFor="exampleInputEmail1">Email address</label>
                     <input
                       type="email"
                       className="form-control"
@@ -50,7 +50,7 @@ export default class login extends Component {
                     </small>
                   </div>
                   <div className="form-group">
-                    <label for="exampleInputPassword1">Password</label>
+                    <label htmlFor="exampleInputPassword1">Password</label>
                     <input
                       type="password"
                       className="form-control"
@@ -63,7 +63,7 @@ export default class login extends Component {
                       className="form-check-input"
                       id="exampleCheck1"
                     />
-                    <label className="form-check-label" for="exampleCheck1">
+                    <label className="form-check-label" htmlFor="exampleCheck1">
                       Check me out
                     </label>
                   </div>
@@ -75,10 +75,10 @@ export default class login extends Component {
                   </button>
                 </form>
               </div>
-              <div class="modal-footer">
+              <div className="modal-footer">
                 <button
                   type="button"
-                  class="btn btn-secondary"
+                  className="btn btn-secondary"
                   data-dismiss="modal"
                 >
                   Close

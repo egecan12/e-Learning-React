@@ -4,12 +4,8 @@ import "./App.css";
 import LoginButton from "./components/login";
 import LessonCards from "./components/LessonCards";
 
-
 function App() {
-
-  
   return (
-    
     <div className="App">
       <nav className="navbar navbar-expand-xl navbar-light bg-light sticky-top">
         <a className="navbar-brand" href="#">
@@ -88,13 +84,14 @@ function App() {
             >
               Search
             </button>
-
           </form>
         </div>
       </nav>
-      <LoginButton/>
-
-      <LessonCards />
+      <LoginButton />
+      <br />
+      <div id="lessonCardContainer">
+        <LessonCards id="lessonCards" />
+      </div>
     </div>
   );
 }

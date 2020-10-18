@@ -80,22 +80,22 @@ export default class LessonCards extends React.Component {
        
           {items.map(item => (
             <div key={item.name}>
-                  <div class="card" style={{ width: "18rem" }}>
+                  <div className="card" style={{ width: "18rem" }}>
           <img
             style={{ width: "18rem", height: "200px" }}
             src={`http://www.palamana.com/teletags/uploads/courses/${item.id}.png`}
             // `http://localhost:5000/profile/${this.props.match.params.username}`
-            class="card-img-top"
+            className="card-img-top"
             alt="..."
           />
 
-          <div class="card-body">
-          <h5 class="card-title">{item.name}</h5>
-            <p class="card-text">
+          <div className="card-body">
+          <h5 className="card-title">{item.name}</h5>
+            <p className="card-text">
            {item.description}
             </p>
 
-           <p  style={{ color: "blue"}}> {item.category.category_en}</p> 
+          <p>Category: <span  style={{ color: "blue"}}> {item.category.category_en}</span> </p> 
           </div>
         </div>
             </div>
