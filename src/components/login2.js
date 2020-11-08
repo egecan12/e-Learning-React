@@ -6,55 +6,55 @@ function Login2() {
   const [loginPassword, setLoginPassword] = useState("");
 
   const login = () => {
-    // if (localStorage.token) {
-    //   return this.props.history.push("/setting");
-    // }
+    if (localStorage.token) {
+      return this.props.history.push("/setting");
+    }
 
-  //   Axios({
-  //     method: "POST",
-  //     data: {
-  //       email: "egecan@egecan.com",
-  //       password: 'toronto',
-  //       accessToken:"902433@!D65@$gRRsdE43bYPSiNESpw!Z"
-  //     },
-  //     withCredentials: true,
-  //     url: "http://teletagsdev-env.eba-a2qmj2nq.us-east-2.elasticbeanstalk.com/api/user/login.php",
-  //   })
-  //     .then((res) => {
-  //       if (res.data.error) {
-  //       //   return toast.error(res.data.message);
-  //       return console.log(res.data);
-  //       }
-  //       localStorage.token = res.data.token;
-  //       // window.location.pathname = "/setting";
-  //       console.log(res.data);
-  //     })
-  //     .catch(() => {
-  //       // toast.error("an error occured");
-  //       console.log('error caught');
+    Axios({
+      method: "POST",
+      data: {
+        email: "egecan@egecan.com",
+        password: 'toronto',
+        accessToken:"902433@!D65@$gRRsdE43bYPSiNESpw!Z"
+      },
+    
+      url: "https://cors-anywhere.herokuapp.com/http://teletagsdev-env.eba-a2qmj2nq.us-east-2.elasticbeanstalk.com/api/user/login.php",
+    })
+      .then((res) => {
+        if (res.data.error) {
+        //   return toast.error(res.data.message);
+        return console.log(res.data);
+        }
+        localStorage.token = res.data.token;
+        // window.location.pathname = "/setting";
+        console.log(res.data);
+      })
+      .catch(() => {
+        // toast.error("an error occured");
+        console.log('error caught');
 
-  //     });
+      });
       
   
 
 
 
-  (async () => {
-    const rawResponse = await fetch('https://cors-anywhere.herokuapp.com/http://teletagsdev-env.eba-a2qmj2nq.us-east-2.elasticbeanstalk.com/api/user/login.php', {
-      method: 'POST',
-      // headers: {
-      //   'Accept': 'application/json',
-      //   'Content-Type': 'application/json'
-      // },
-      body: JSON.stringify({ 
-           email: "egecan@egecan.com",
-           password: 'toronto',
-           accessToken:"902433@!D65@$gRRsdE43bYPSiNESpw!Z"})
-    });
-    const content = await rawResponse.json();
+  // (async () => {
+  //   const rawResponse = await fetch('https://cors-anywhere.herokuapp.com/http://teletagsdev-env.eba-a2qmj2nq.us-east-2.elasticbeanstalk.com/api/user/login.php', {
+  //     method: 'POST',
+  //     // headers: {
+  //     //   'Accept': 'application/json',
+  //     //   'Content-Type': 'application/json'
+  //     // },
+  //     body: JSON.stringify({ 
+  //          email: "egecan@egecan.com",
+  //          password: 'toronto',
+  //          accessToken:"902433@!D65@$gRRsdE43bYPSiNESpw!Z"})
+  //   });
+  //   const content = await rawResponse.json();
   
-    console.log(content);
-  })();
+  //   console.log(content);
+  // })();
   }
   // logOut = () => {
   //   localStorage.clear();

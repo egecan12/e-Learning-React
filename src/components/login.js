@@ -5,9 +5,9 @@ class login extends Component {
     super(props);
 
     this.state = {
-      email: "egecan@egecan.com",
-      password: "toronto",
-      accessToken: "902433@!D65@$gRRsdE43bYPSiNESpw!Z",
+      email: "",
+      password: "",
+      accessToken: "",
     };
   }
 
@@ -24,14 +24,21 @@ class login extends Component {
         this.state
       )
       .then((response) => {
-        console.log(response);
+        if (response.data.error) {
+          return console.log("error");
+
+        }
+        console.log(response.data);
+        localStorage.token = response.data.jwt;
+        window.location.pathname = "/userProfile";
+
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
-//   https://httpbin.org/anything  use that api to send test post request
+  //   https://httpbin.org/anything  use that api to send test post request
   render() {
     const { email, password, accessToken } = this.state;
     return (
@@ -59,6 +66,7 @@ class login extends Component {
               name="accessToken"
               value={accessToken}
               onChange={this.changeHandler}
+              hidden={true}
             />
           </div>
           <button type="submit">Submit</button>
