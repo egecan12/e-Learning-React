@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
-class login extends Component {
+class login3 extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      email: "egecan@egecan.com",
-      password: "toronto",
-      accessToken: "902433@!D65@$gRRsdE43bYPSiNESpw!Z",
+      email: "",
+      password: "",
+      accessToken: "",
     };
   }
 
@@ -18,20 +18,32 @@ class login extends Component {
   submitHandler = (e) => {
     e.preventDefault();
     console.log(this.state);
-    axios
-      .post(
-        "https://cors-anywhere.herokuapp.com/http://teletagsdev-env.eba-a2qmj2nq.us-east-2.elasticbeanstalk.com/api/user/login.php",
-        this.state
-      )
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+
+    const url =
+      "https://httpbin.org/anything";
+
+    // post body data
+    const user = {
+      email: "egecan@egecan.com",
+      password: "toronto",
+      accessToken: "902433@!D65@$gRRsdE43bYPSiNESpw!Z",
+    };
+
+    // request options
+    const options = {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    // send POST request
+    fetch(url, options, )
+      .then((res) => res.json())
+      .then((res) => console.log(res));
   };
 
-//   https://httpbin.org/anything  use that api to send test post request
   render() {
     const { email, password, accessToken } = this.state;
     return (
@@ -68,4 +80,4 @@ class login extends Component {
   }
 }
 
-export default login;
+export default login3;
