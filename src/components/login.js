@@ -34,7 +34,7 @@ class login extends Component {
         localStorage.token = response.data.jwt;
         // toast.success(response.data.message);
 
-        window.location.pathname = "/userProfile";
+         window.location.pathname = "/userProfile";
       })
       .catch((error) => {
         toast.error("an error occured");
