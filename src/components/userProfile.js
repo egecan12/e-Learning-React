@@ -10,6 +10,10 @@ export default class userProfile extends Component {
       settings: null,
     };
   }
+  logOut = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
   componentDidMount() {
     if (!localStorage.token) {
       return (window.location.pathname = "/401");
@@ -38,10 +42,18 @@ export default class userProfile extends Component {
   render() {
     const { settings } = this.state; //statedeki settingi rendera aliyoruz
     console.log(settings);
+
     return (
       settings && (
         <div>
-         <h1>Welcome {settings.data.username} </h1>
+          <button
+            onClick={this.logOut}
+            type="Login"
+            className="btn btn-info btn-block"
+          >
+            LogOut
+          </button>
+          <h1>Welcome {settings.data.username} </h1>
         </div>
       )
     );
