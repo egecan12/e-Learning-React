@@ -36,16 +36,6 @@
     transform: rotate(360deg);
   }
 }
-@media only screen and (max-width: 600px) {
-  #postsGrid {
-    display: block !important;
-  }
 
- #lessonCardContainer{
-  margin-left: 7%;
-
- }
-
-}
 
 

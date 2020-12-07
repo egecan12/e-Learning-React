@@ -2,8 +2,8 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-import UserProfile from "./pages/userProfile";
-import Home from "./pages/home";
+import UserProfile from "./pages/userProfile/userProfile";
+import Home from "./pages/home/home";
 
 
 import {

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LoginContainer from "./login.style";
 
 class login extends Component {
   constructor(props) {
@@ -45,12 +46,12 @@ class login extends Component {
   render() {
     const { email, password, accessToken } = this.state;
     return (
-      <div>
+      <LoginContainer>
         <ToastContainer autoClose={2000} position="top-left" zIndex={99999} />
 
         <button
           type="button"
-          className="btn btn-primary"
+          className="btn btn-primary loginButton"
           data-toggle="modal"
           data-target="#exampleModal"
         >
@@ -171,7 +172,7 @@ class login extends Component {
           </div>
           <button type="submit">Submit</button>
         </form> */}
-      </div>
+      </LoginContainer>
     );
   }
 }

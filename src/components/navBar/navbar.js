@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import LoginButton from "../components/login";
-import LessonCards from "../components/LessonCards";
+import NavBarContainer from "./navbar.style";
+import { Link } from "react-router-dom";
 
-export default class home extends Component {
+export default class navbar extends Component {
   render() {
     return (
-      <div>
+      <NavBarContainer>
         <nav className="navbar navbar-expand-xl navbar-light bg-light sticky-top">
-          <a className="navbar-brand" href="#">
+          <Link to="#" className="navbar-brand">
             Navbar
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -25,14 +25,14 @@ export default class home extends Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="#">
-                  Home <span className="sr-only">(current)</span>
-                </a>
+                <Link to="#" className="nav-link">
+                  Home
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link to="#" className="nav-link">
                   Link
-                </a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -47,16 +47,16 @@ export default class home extends Component {
                   Dropdown
                 </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a className="dropdown-item" href="#">
+                  <Link to="#" className="dropdown-item">
                     Action
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
+                  </Link>
+                  <Link to="#" className="dropdown-item">
+                    Another Action
+                  </Link>
                   <div className="dropdown-divider"></div>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
+                  <Link to="#" className="dropdown-item">
+                    Something else
+                  </Link>
                 </div>
               </li>
               <li className="nav-item">
@@ -86,12 +86,7 @@ export default class home extends Component {
             </form>
           </div>
         </nav>
-        <LoginButton />
-        <br />
-        <div id="lessonCardContainer">
-          <LessonCards id="lessonCards" />
-        </div>
-      </div>
+      </NavBarContainer>
     );
   }
 }
