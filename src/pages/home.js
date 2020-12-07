@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import LoginButton from "./login";
-import LessonCards from "./LessonCards";
+import LoginButton from "../components/login";
+import LessonCards from "../components/LessonCards";
 
 export default class home extends Component {
   render() {

@@ -54,7 +54,7 @@ class login extends Component {
           data-toggle="modal"
           data-target="#exampleModal"
         >
-          Sign-In
+          Login
         </button>
 
         <div
@@ -68,7 +68,7 @@ class login extends Component {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  Modal title
+                  Login
                 </h5>
 
                 <button

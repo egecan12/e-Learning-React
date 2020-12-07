@@ -16,7 +16,7 @@ export default class userProfile extends Component {
   };
   componentDidMount() {
     if (!localStorage.token) {
-      return (window.location.pathname = "/401");
+      return (window.location.pathname = "/");
     }
     axios
       .post(
