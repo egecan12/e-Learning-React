@@ -34,8 +34,8 @@ export default class LessonCards extends React.Component {
         }
       );
     //second fectch
-
-    fetch("http://palamana.com/teletags/course/read.php")
+    //"http://palamana.com/teletags/course/read.php
+    fetch("//palamana.com/teletags/course/read.php")
       // `http://localhost:5000/profile/${this.props.match.params.username}`,
       .then((res) => res.json())
       .then(
