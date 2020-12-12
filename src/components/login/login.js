@@ -68,7 +68,7 @@ class login extends Component {
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
+                <h5 className="modal-title" id="">
                   Login
                 </h5>
 
@@ -89,7 +89,6 @@ class login extends Component {
                     <input
                       type="email"
                       className="form-control"
-                      id="exampleInputEmail1"
                       aria-describedby="emailHelp"
                       name="email"
                       value={email}
@@ -104,7 +103,6 @@ class login extends Component {
                     <input
                       type="password"
                       className="form-control"
-                      id="exampleInputPassword1"
                       onChange={this.changeHandler}
                       name="password"
                       value={password}

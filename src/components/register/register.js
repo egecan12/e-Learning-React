@@ -127,7 +127,7 @@ export default class register extends Component {
                     <input
                       type="password"
                       className="form-control"
-                      minlength="8" required
+                      minLength="6" required
                       id="exampleInputPassword"
                       aria-describedby="emailHelp"
                       name="password"

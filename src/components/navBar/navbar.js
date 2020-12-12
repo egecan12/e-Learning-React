@@ -6,7 +6,7 @@ export default class navbar extends Component {
   render() {
     return (
       <NavBarContainer>
-        <nav className="navbar navbar-expand-xl navbar-light bg-light sticky-top">
+        <nav className="navbar navbar-expand-xl navbar-dark sticky-top">
           <Link to="/" className="navbar-brand">
             Logo
           </Link>
