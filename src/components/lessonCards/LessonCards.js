@@ -35,7 +35,7 @@ export default class LessonCards extends React.Component {
       );
     //second fectch
     //"http://palamana.com/teletags/course/read.php
-    fetch("https://palamana.com/teletags/course/read.php")
+    fetch("//palamana.com/teletags/course/read.php")
       // `http://localhost:5000/profile/${this.props.match.params.username}`,
       .then((res) => res.json())
       .then(
@@ -84,7 +84,7 @@ export default class LessonCards extends React.Component {
               <div className="card" style={{ width: "18rem" }}>
                 <img
                   style={{ width: "18rem", height: "200px" }}
-                  src={`http://www.palamana.com/teletags/uploads/courses/${item.id}.png`}
+                  src={`//www.palamana.com/teletags/uploads/courses/${item.id}.png`}
                   // `http://localhost:5000/profile/${this.props.match.params.username}`
                   className="card-img-top"
                   alt="..."
