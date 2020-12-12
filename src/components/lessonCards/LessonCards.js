@@ -14,7 +14,7 @@ export default class LessonCards extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://palamana.com/teletags/course/read.php")
+    fetch("//palamana.com/teletags/course/read.php")
       .then((res) => res.json())
       .then(
         (result) => {
