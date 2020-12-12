@@ -1,7 +1,46 @@
 import React, { Component } from "react";
 import RegisterContainer from "./register.style";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 export default class register extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: "",
+      username: "",
+      password: "",
+      firstName: "",
+      lastName: "",
+    };
+  }
+  changeHandler = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  submitHandler = (e) => {
+    e.preventDefault();
+    console.log(this.state);
+    axios
+      .post(
+        "https://cors-anywhere.herokuapp.com/http://teletagsdev-env.eba-a2qmj2nq.us-east-2.elasticbeanstalk.com/api/user/create.php",
+        this.state
+      )
+      .then((response) => {
+        if (response.data.error) {
+          return toast.error(response.data.message);
+        }
+        console.log(response.data);
+        toast.success(response.data.message);
+
+        window.location.pathname = "/";
+      })
+      .catch((error) => {
+        toast.error("an error occured");
+      });
+  };
   render() {
     return (
       <RegisterContainer>
@@ -47,92 +86,58 @@ export default class register extends Component {
                       className="form-control"
                       id="exampleInputEmail1"
                       aria-describedby="emailHelp"
-                      name="email"
+                      name="email"required
                       onChange={this.changeHandler}
                     />
-                    <small id="emailHelp" className="form-text text-muted">
-                      We'll never share your email with anyone else.
-                    </small>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="exampleInputPassword1">Password</label>
+                    <label htmlFor="usernameInput">Username</label>
                     <input
-                      type="password"
+                      type="text"
                       className="form-control"
                       id="exampleInputPassword1"
                       onChange={this.changeHandler}
+                      name="username"required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="firstNameInput">First name</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="exampleFirstName"
+                      aria-describedby="emailHelp"
+                      name="firstName"required
+                      onChange={this.changeHandler}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="lastNameInput">Last name</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="exampleLastName"
+                      aria-describedby="emailHelp"
+                      name="lastName"required
+                      onChange={this.changeHandler}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="passwordInput">Password</label>
+                    <input
+                      type="password"
+                      className="form-control"
+                      minlength="8" required
+                      id="exampleInputPassword"
+                      aria-describedby="emailHelp"
                       name="password"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="exampleInputEmail1">Email address</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                      name="email"
                       onChange={this.changeHandler}
                     />
                     <small id="emailHelp" className="form-text text-muted">
-                      We'll never share your email with anyone else.
+                      We'll never share your password with anyone else.
                     </small>
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="exampleInputEmail1">Email address</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                      name="email"
-                      onChange={this.changeHandler}
-                    />
-                    <small id="emailHelp" className="form-text text-muted">
-                      We'll never share your email with anyone else.
-                    </small>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="exampleInputEmail1">Email address</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                      name="email"
-                      onChange={this.changeHandler}
-                    />
-                    <small id="emailHelp" className="form-text text-muted">
-                      We'll never share your email with anyone else.
-                    </small>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="exampleInputEmail1">Email address</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                      name="email"
-                      onChange={this.changeHandler}
-                    />
-                    <small id="emailHelp" className="form-text text-muted">
-                      We'll never share your email with anyone else.
-                    </small>
-                  </div>
-                  <div className="form-group form-check">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="exampleCheck1"
-                    />
-                    <label className="form-check-label" htmlFor="exampleCheck1">
-                      Check me out
-                    </label>
-                  </div>
-                  <br />
-                  <p>No account yet? Go register!</p>
-                  <br />
+          
                   <button type="submit" className="btn btn-primary">
                     Submit
                   </button>

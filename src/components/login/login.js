@@ -35,7 +35,7 @@ class login extends Component {
         localStorage.token = response.data.jwt;
         // toast.success(response.data.message);
 
-         window.location.pathname = "/userProfile";
+        window.location.pathname = "/userProfile";
       })
       .catch((error) => {
         toast.error("an error occured");
@@ -51,7 +51,7 @@ class login extends Component {
 
         <button
           type="button"
-          className="btn btn-primary loginButton"
+          className="btn btn-dark loginButton"
           data-toggle="modal"
           data-target="#loginModal"
         >
@@ -110,23 +110,7 @@ class login extends Component {
                       value={password}
                     />
                   </div>
-                  <div className="form-group form-check">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="exampleCheck1"
-                    />
-                    <label className="form-check-label" htmlFor="exampleCheck1">
-                      Check me out
-                    </label>
-                  </div>
-                  <br />
-                  <p>No account yet? Go register!</p>
-                  <br />
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                  >
+                  <button type="submit" className="btn btn-dark">
                     Submit
                   </button>
                 </form>
@@ -134,7 +118,7 @@ class login extends Component {
               <div className="modal-footer">
                 <button
                   type="button"
-                  className="btn btn-secondary"
+                  className="btn btn-btn-dark"
                   data-dismiss="modal"
                 >
                   Close

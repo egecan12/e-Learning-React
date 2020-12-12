@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import axios from "axios";
+import Navbar from "../../components/navBar/navbar";
 
 export default class userProfile extends Component {
   constructor(props) {
@@ -46,6 +47,7 @@ export default class userProfile extends Component {
     return (
       settings && (
         <div>
+          <Navbar/>
           <button
             onClick={this.logOut}
             type="Login"

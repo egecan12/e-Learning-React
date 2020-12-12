@@ -7,8 +7,8 @@ export default class navbar extends Component {
     return (
       <NavBarContainer>
         <nav className="navbar navbar-expand-xl navbar-light bg-light sticky-top">
-          <Link to="#" className="navbar-brand">
-            Navbar
+          <Link to="/" className="navbar-brand">
+            Logo
           </Link>
           <button
             className="navbar-toggler"
@@ -25,13 +25,13 @@ export default class navbar extends Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <Link to="#" className="nav-link">
-                  Home
+                <Link to="/" className="nav-link">
+                  Courses
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="#" className="nav-link">
-                  Link
+                  Become an instructor
                 </Link>
               </li>
               <li className="nav-item dropdown">
@@ -44,18 +44,18 @@ export default class navbar extends Component {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  Dropdown
+                  Pricing
                 </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <Link to="#" className="dropdown-item">
-                    Action
+                    Premium
                   </Link>
                   <Link to="#" className="dropdown-item">
-                    Another Action
+                    Free account
                   </Link>
                   <div className="dropdown-divider"></div>
                   <Link to="#" className="dropdown-item">
-                    Something else
+                    Instructor account
                   </Link>
                 </div>
               </li>
@@ -66,7 +66,7 @@ export default class navbar extends Component {
                   tabIndex="-1"
                   aria-disabled="true"
                 >
-                  Disabled
+                  Contact
                 </a>
               </li>
             </ul>
